@@ -3,6 +3,10 @@
     margin: 1.4rem auto auto auto;
 }
 
+button {
+    margin-bottom: .8rem;
+}
+
 .title {
     text-align: center;
     margin-bottom: 3rem;
@@ -25,3 +29,22 @@ th.mat-header-cell {
 td.mat-cell {
     color: white;
 }
+
+.livro {
+    margin-left: .5rem;
+    color: #2d2dcb;
+}
+
+.edit {
+    color: #dea035;
+}
+
+.delete {
+    color: #9c1a1a;
+    margin-left: .5rem;
+}
+
+.mat-header {
+    width: 5rem;
+}
+
