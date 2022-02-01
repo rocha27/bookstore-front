@@ -5,6 +5,8 @@
 
 button {
     margin-bottom: .8rem;
+    color: white;
+    background-color: gray;
 }
 
 .title {
@@ -46,5 +48,9 @@ td.mat-cell {
 
 .mat-header {
     width: 5rem;
+}
+
+.mat-primary {
+    color: white;
 }
 

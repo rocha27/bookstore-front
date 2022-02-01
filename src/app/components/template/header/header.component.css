@@ -18,6 +18,7 @@ span {
 }
 
 .header {
+    width: 100%;
     justify-content: center;
     height: 10%;
     text-align: center;
