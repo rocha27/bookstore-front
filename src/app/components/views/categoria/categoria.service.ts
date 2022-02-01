@@ -20,9 +20,19 @@ export class CategoriaService {
     return this.http.get<CategoriaModel[]>(url);
   }
 
+  findById(id: String):Observable<CategoriaModel> {
+    const url = `${this.baseUrl}/categorias/${id}`
+    return this.http.get<CategoriaModel>(url)
+  }
+
   create(categoria: CategoriaModel): Observable<CategoriaModel>{
     const url = `${this.baseUrl}/categorias`
     return this.http.post<CategoriaModel>(url, categoria);
+  }
+
+  delete(id: String): Observable<void> {
+    const url = `${this.baseUrl}/categorias/${id}`
+    return this.http.delete<void>(url)
   }
 
   mensagem(str: String): void {
@@ -32,4 +42,6 @@ export class CategoriaService {
       duration: 3000
     })
   }
+
+
 }
