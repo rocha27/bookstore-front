@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {LivroModel} from "./livro-read-all/livro.model";
 import {environment} from "../../../../environments/environment";
 import {Observable} from "rxjs";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,25 @@ export class LivroService {
 
   baseUrl: String = environment.baseUrl
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private snackBar: MatSnackBar ) { }
 
   findAllByCategoria(id_cat: String): Observable<LivroModel[]> {
     const url = `${this.baseUrl}/livros?categoria=${id_cat}`
     return this.http.get<LivroModel[]>(url)
+  }
+
+  create(livro: LivroModel, id_cat: String): Observable<LivroModel> {
+    const url = `${this.baseUrl}/livros?categoria=${id_cat}`
+    return this.http.post<LivroModel>(url, livro)
+  }
+
+  mensagem(str: String): void {
+    this.snackBar.open(`${str}`, 'OK', {
+      horizontalPosition: "end",
+      verticalPosition: "top",
+      duration: 3000
+    })
   }
 
 }
