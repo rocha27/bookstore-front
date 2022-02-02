@@ -30,10 +30,14 @@ export class LivroService {
     return this.http.put<LivroModel>(url, livroModel);
   }
 
-
   create(livro: LivroModel, id_cat: String): Observable<LivroModel> {
     const url = `${this.baseUrl}/livros?categoria=${id_cat}`
     return this.http.post<LivroModel>(url, livro)
+  }
+
+  delete(id: String): Observable<void> {
+    const url = `${this.baseUrl}/livros/${id}`
+    return this.http.delete<void>(url)
   }
 
   mensagem(str: String): void {
